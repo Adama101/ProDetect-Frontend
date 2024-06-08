@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import { useColorScheme } from '@mui/material/styles';
 
 import { NoSsr } from '@/components/core/no-ssr';
+import { borderRadius } from '@mui/system';
 
 const HEIGHT = 100;
 const WIDTH = 100;
@@ -22,9 +23,9 @@ export function Logo({ color = 'dark', emblem, height = HEIGHT, width = WIDTH }:
   let url: string;
 
   if (emblem) {
-    url = color === 'light' ? '/assets/prodetect_logo.png' : '/assets/prodetect_logo.png';
+    url = color === 'light' ? '/assets/prodetect_logo.svg' : '/assets/prodetect_logo.svg';
   } else {
-    url = color === 'dark' ? '/assets/prodetect_logo.png' : '/assets/prodetect_logo.png';
+    url = color === 'dark' ? '/assets/prodetect_logo.svg' : '/assets/prodetect_logo.svg';
   }
 
   return <Box alt="logo" component="img" height={height} src={url} width={width} />;

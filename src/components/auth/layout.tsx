@@ -17,13 +17,17 @@ export function Layout({ children }: LayoutProps): React.JSX.Element {
         display: { xs: 'flex', lg: 'grid' },
         flexDirection: 'column',
         gridTemplateColumns: '1fr 1fr',
-        minHeight: '100%',
+        //minHeight: '100%',
+        justifyContent:'right',
+        alignItems:'right',
+        //height:'100vh',
       }}
     >
-      <Box sx={{ display: 'flex', flex: '1 1 auto', flexDirection: 'column' }}>
+      <Box sx={{ display: 'flex', flex: 'auto', flexDirection: 'column' }}>
         <Box sx={{ p: 3 }}>
           <Box component={RouterLink} href={paths.home} sx={{ display: 'inline-block', fontSize: 0 }}>
-            <DynamicLogo colorDark="light" colorLight="dark" height={32} width={122} />
+            //SignIn Logo
+            <DynamicLogo colorDark="light" colorLight="dark" height={100} width={270} />
           </Box>
         </Box>
         <Box sx={{ alignItems: 'center', display: 'flex', flex: '1 1 auto', justifyContent: 'center', p: 3 }}>
