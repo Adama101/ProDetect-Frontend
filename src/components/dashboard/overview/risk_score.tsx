@@ -7,19 +7,19 @@ import type { SxProps } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import { Receipt as ReceiptIcon } from '@phosphor-icons/react/dist/ssr/Receipt';
 
-export interface TotalProfitProps {
+export interface RiskScoreProps {
   sx?: SxProps;
   value: string;
 }
 
-export function TotalProfit({ value, sx }: TotalProfitProps): React.JSX.Element {
+export function RiskScore({ value, sx }: RiskScoreProps): React.JSX.Element {
   return (
     <Card sx={sx}>
       <CardContent>
         <Stack direction="row" sx={{ alignItems: 'flex-start', justifyContent: 'space-between' }} spacing={3}>
           <Stack spacing={1}>
             <Typography color="text.secondary" variant="overline">
-              Total Profit
+              Average Risk Score
             </Typography>
             <Typography variant="h4">{value}</Typography>
           </Stack>

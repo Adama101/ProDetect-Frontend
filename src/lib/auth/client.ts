@@ -40,7 +40,7 @@ class AuthClient {
   async signUp(_: SignUpParams): Promise<{ error?: string }> {
     // Make API request
 
-    // We do not handle the API, so we'll just generate a token and store it in localStorage.
+    // Token generated and stored in localStorage.
     const token = generateToken();
     localStorage.setItem('custom-auth-token', token);
 
@@ -57,7 +57,7 @@ class AuthClient {
     // Make API request
 
     // Auth Credentials
-    if (email !== 'adama.jarju@meltwater.org' || password !== 'secret123') {
+    if (email !== 'adama.jarju@meltwater.org' || password !== '123') {
       return { error: 'Invalid credentials' };
     }
 

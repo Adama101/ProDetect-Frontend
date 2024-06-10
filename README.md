@@ -47,7 +47,7 @@
 	└── app
 		├── layout.tsx
 		├── page.tsx
-		├── auth
+		├── auth ----Handles Authentication
 		└── dashboard
 ```
 

@@ -22,24 +22,23 @@ export function Notifications(): React.JSX.Element {
       }}
     >
       <Card>
-        <CardHeader subheader="Manage the notifications" title="Notifications" />
+        <CardHeader subheader="Manage your notifications" title="Email Notifications" />
         <Divider />
         <CardContent>
           <Grid container spacing={6} wrap="wrap">
             <Grid md={4} sm={6} xs={12}>
               <Stack spacing={1}>
-                <Typography variant="h6">Email</Typography>
                 <FormGroup>
-                  <FormControlLabel control={<Checkbox defaultChecked />} label="Product updates" />
+                <FormControlLabel control={<Checkbox defaultChecked  />} label="Alerts" />
+                  <FormControlLabel control={<Checkbox />} label="System updates" />
                   <FormControlLabel control={<Checkbox />} label="Security updates" />
                 </FormGroup>
               </Stack>
             </Grid>
             <Grid md={4} sm={6} xs={12}>
               <Stack spacing={1}>
-                <Typography variant="h6">Phone</Typography>
                 <FormGroup>
-                  <FormControlLabel control={<Checkbox defaultChecked />} label="Email" />
+                  <FormControlLabel control={<Checkbox/>} label="New features" />
                   <FormControlLabel control={<Checkbox />} label="Security updates" />
                 </FormGroup>
               </Stack>

@@ -26,7 +26,8 @@ export function Layout({ children }: LayoutProps): React.JSX.Element {
       <Box sx={{ display: 'flex', flex: 'auto', flexDirection: 'column' }}>
         <Box sx={{ p: 3 }}>
           <Box component={RouterLink} href={paths.home} sx={{ display: 'inline-block', fontSize: 0 }}>
-            //SignIn Logo
+            
+            {/* //SignIn Logo */}
             <DynamicLogo colorDark="light" colorLight="dark" height={100} width={270} />
           </Box>
         </Box>

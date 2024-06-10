@@ -21,7 +21,7 @@ const statusMap = {
   refunded: { label: 'Refunded', color: 'error' },
 } as const;
 
-export interface Order {
+export interface AllAlerts {
   id: string;
   customer: { name: string };
   amount: number;
@@ -29,28 +29,28 @@ export interface Order {
   createdAt: Date;
 }
 
-export interface LatestOrdersProps {
-  orders?: Order[];
+export interface LatestAlertsProps {
+  alert?: AllAlerts[];
   sx?: SxProps;
 }
 
-export function LatestOrders({ orders = [], sx }: LatestOrdersProps): React.JSX.Element {
+export function LatestAlerts({ alert = [], sx }: LatestAlertsProps): React.JSX.Element {
   return (
     <Card sx={sx}>
-      <CardHeader title="Latest orders" />
+      <CardHeader title="Latest Alerts" />
       <Divider />
       <Box sx={{ overflowX: 'auto' }}>
         <Table sx={{ minWidth: 800 }}>
           <TableHead>
             <TableRow>
-              <TableCell>Order</TableCell>
-              <TableCell>Customer</TableCell>
+              <TableCell>Alert ID</TableCell>
+              <TableCell>Customer ID</TableCell>
               <TableCell sortDirection="desc">Date</TableCell>
-              <TableCell>Status</TableCell>
+              <TableCell>Risk Score</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {orders.map((order) => {
+            {alert.map((order) => {
               const { label, color } = statusMap[order.status] ?? { label: 'Unknown', color: 'default' };
 
               return (
