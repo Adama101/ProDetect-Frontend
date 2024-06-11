@@ -6,7 +6,7 @@ import LinearProgress from '@mui/material/LinearProgress';
 import Stack from '@mui/material/Stack';
 import type { SxProps } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
-import { ListBullets as ListBulletsIcon } from '@phosphor-icons/react/dist/ssr/ListBullets';
+import { Warning as WarningIcon } from '@phosphor-icons/react/dist/ssr/Warning';
 
 export interface AlertsProps {
   sx?: SxProps;
@@ -23,10 +23,10 @@ export function Alerts({ value, sx }: AlertsProps): React.JSX.Element {
               <Typography color="text.secondary" gutterBottom variant="overline">
                 Alerts
               </Typography>
-              <Typography variant="h4">{value}%</Typography>
+              <Typography variant="h4">{value}</Typography>
             </Stack>
             <Avatar sx={{ backgroundColor: 'var(--mui-palette-warning-main)', height: '56px', width: '56px' }}>
-              <ListBulletsIcon fontSize="var(--icon-fontSize-lg)" />
+              <WarningIcon fontSize="var(--icon-fontSize-lg)" />
             </Avatar>
           </Stack>
           <div>

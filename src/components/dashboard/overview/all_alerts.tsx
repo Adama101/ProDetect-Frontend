@@ -16,21 +16,22 @@ import { ArrowRight as ArrowRightIcon } from '@phosphor-icons/react/dist/ssr/Arr
 import dayjs from 'dayjs';
 
 const statusMap = {
-  pending: { label: 'Pending', color: 'warning' },
-  delivered: { label: 'Delivered', color: 'success' },
-  refunded: { label: 'Refunded', color: 'error' },
+  flagged: { label: 'Flagged', color: 'warning' },
+  allowed: { label: 'Allowed', color: 'success' },
+  high_risk: { label: 'High Risk', color: 'error' },
 } as const;
 
-export interface AllAlerts {
+export interface allalerts {
   id: string;
   customer: { name: string };
   amount: number;
-  status: 'pending' | 'delivered' | 'refunded';
+  status: 'flagged' | 'allowed' | 'high_risk';
   createdAt: Date;
+  riskscore: number;
 }
 
 export interface LatestAlertsProps {
-  alert?: AllAlerts[];
+  alert?: allalerts[];
   sx?: SxProps;
 }
 
@@ -44,23 +45,27 @@ export function LatestAlerts({ alert = [], sx }: LatestAlertsProps): React.JSX.E
           <TableHead>
             <TableRow>
               <TableCell>Alert ID</TableCell>
-              <TableCell>Customer ID</TableCell>
+              <TableCell>Customer Name</TableCell>
               <TableCell sortDirection="desc">Date</TableCell>
+              <TableCell>Alert Status</TableCell>
+              <TableCell>Amount</TableCell>
               <TableCell>Risk Score</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {alert.map((order) => {
-              const { label, color } = statusMap[order.status] ?? { label: 'Unknown', color: 'default' };
+          {alert.map((alertItem) => {
+              const { label, color } = statusMap[alertItem.status] ?? { label: 'Unknown', color: 'default' };
 
               return (
-                <TableRow hover key={order.id}>
-                  <TableCell>{order.id}</TableCell>
-                  <TableCell>{order.customer.name}</TableCell>
-                  <TableCell>{dayjs(order.createdAt).format('MMM D, YYYY')}</TableCell>
+                <TableRow hover key={alertItem.id}>
+                  <TableCell>{alertItem.id}</TableCell>
+                  <TableCell>{alertItem.customer.name}</TableCell>
+                  <TableCell>{dayjs(alertItem.createdAt).format('MMM D, YYYY')}</TableCell>
                   <TableCell>
                     <Chip color={color} label={label} size="small" />
                   </TableCell>
+                  <TableCell>{alertItem.amount}</TableCell>
+                  <TableCell>{alertItem.riskscore}</TableCell>
                 </TableRow>
               );
             })}

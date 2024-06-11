@@ -40,7 +40,7 @@ export function TotalCustomers({ diff, trend, sx, value }: TotalCustomersProps):
               <Stack sx={{ alignItems: 'center' }} direction="row" spacing={0.5}>
                 <TrendIcon color={trendColor} fontSize="var(--icon-fontSize-md)" />
                 <Typography color={trendColor} variant="body2">
-                  {diff}%
+                  {diff}
                 </Typography>
               </Stack>
               <Typography color="text.secondary" variant="caption">

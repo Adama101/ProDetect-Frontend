@@ -11,7 +11,6 @@ import Divider from '@mui/material/Divider';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Unstable_Grid2';
 
 export function Notifications(): React.JSX.Element {

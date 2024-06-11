@@ -9,7 +9,7 @@ import { Receipt as ReceiptIcon } from '@phosphor-icons/react/dist/ssr/Receipt';
 
 export interface RiskScoreProps {
   sx?: SxProps;
-  value: string;
+  value: number;
 }
 
 export function RiskScore({ value, sx }: RiskScoreProps): React.JSX.Element {

@@ -11,6 +11,7 @@ import { TransactionVolume } from '@/components/dashboard/overview/transaction_v
 import { FlaggedTransactions } from '@/components/dashboard/overview/flagged_transactions';
 import { LatestAlerts } from '@/components/dashboard/overview/all_alerts';
 import { FlaggedCustomer } from '@/components/dashboard/overview/flagged_customers';
+import { TotalTransactions } from '@/components/dashboard/overview/total_transactions';
 
 export const metadata = { title: `Overview | Dashboard | ${config.site.name}` } satisfies Metadata;
 
@@ -18,17 +19,27 @@ export default function Page(): React.JSX.Element {
   return (
     <Grid container spacing={3}>
       <Grid lg={3} sm={6} xs={12}>
-        <TotalCustomers diff={12} trend="up" sx={{ height: '100%' }} value="$24k" />
+
+        {/* Total Transaction Tile */}
+        <TotalTransactions diff={12} trend="up" sx={{ height: '100%' }} value="$24K" />
       </Grid>
       <Grid lg={3} sm={6} xs={12}>
-        <TotalCustomers diff={16} trend="down" sx={{ height: '100%' }} value="1.6k" />
+
+        {/* Total Customer Tile */}
+        <TotalCustomers diff={16} trend="down" sx={{ height: '100%' }} value="178" />
       </Grid>
       <Grid lg={3} sm={6} xs={12}>
-        <Alerts sx={{ height: '100%' }} value={75.5} />
+
+        {/* Alerts Tile */}
+        <Alerts sx={{ height: '100%' }} value={75} />
       </Grid>
       <Grid lg={3} sm={6} xs={12}>
-        <RiskScore sx={{ height: '100%' }} value="$15k" />
+
+        {/* Risk Score Tile */}
+        <RiskScore sx={{ height: '100%' }} value={15} />
       </Grid>
+
+      {/* Total Transaction Volume Tile */}
       <Grid lg={8} xs={12}>
         <TransactionVolume
           chartSeries={[
@@ -38,9 +49,13 @@ export default function Page(): React.JSX.Element {
           sx={{ height: '100%' }}
         />
       </Grid>
+
+      {/* Flagged Transactions Tile */}
       <Grid lg={4} md={6} xs={12}>
         <FlaggedTransactions chartSeries={[63, 15, 22]} labels={['Desktop', 'Tablet', 'Phone']} sx={{ height: '100%' }} />
       </Grid>
+
+      {/* Flagged Customers Tile */}
       <Grid lg={4} md={6} xs={12}>
         <FlaggedCustomer
           products={[
@@ -52,13 +67,13 @@ export default function Page(): React.JSX.Element {
             },
             {
               id: 'PRD-004',
-              name: 'Nas Mohammad',
+              name: 'Kaba Mohammad',
               avatar: '',
               updatedAt: dayjs().subtract(41, 'minutes').subtract(3, 'hour').toDate(),
             },
             {
               id: 'PRD-003',
-              name: 'Rita Sakuran',
+              name: 'Adama JArju',
               avatar: 'assets/avatar.png',
               updatedAt: dayjs().subtract(5, 'minutes').subtract(3, 'hour').toDate(),
             },
@@ -70,7 +85,7 @@ export default function Page(): React.JSX.Element {
             },
             {
               id: 'PRD-001',
-              name: 'Eve Oliver',
+              name: 'Jude Oliver',
               avatar: 'assets/avatar.png',
               updatedAt: dayjs().subtract(10, 'minutes').toDate(),
             },
@@ -81,46 +96,54 @@ export default function Page(): React.JSX.Element {
       <Grid lg={8} md={12} xs={12}>
         <LatestAlerts
           alert={[
+            
+            // This is a sample dummy  data for place holding
             {
               id: 'PTD-007',
-              customer: { name: 'Ekaterina Tankova' },
-              amount: 30.5,
-              status: 'pending',
+              customer: { name: 'Lucky Dogbey' },
+              amount: 10.50,
+              status: 'allowed',
+              riskscore: 7,
               createdAt: dayjs().subtract(10, 'minutes').toDate(),
             },
             {
               id: 'PTD-006',
-              customer: { name: 'Cao Yu' },
-              amount: 25.1,
-              status: 'delivered',
+              customer: { name: 'Emmanuel Terwase' },
+              amount: 250.1,
+              status: 'allowed',
+              riskscore: 75,
               createdAt: dayjs().subtract(10, 'minutes').toDate(),
             },
             {
               id: 'PTD-004',
-              customer: { name: 'Alexa Richardson' },
-              amount: 10.99,
-              status: 'refunded',
+              customer: { name: 'Jude Belligham' },
+              amount: 1000.99,
+              status: 'high_risk',
+              riskscore: 90,
               createdAt: dayjs().subtract(10, 'minutes').toDate(),
             },
             {
               id: 'PTD-003',
-              customer: { name: 'Anje Keizer' },
-              amount: 96.43,
-              status: 'pending',
+              customer: { name: 'Bright Init' },
+              amount: 906.43,
+              status: 'allowed',              
+              riskscore: 63,
               createdAt: dayjs().subtract(10, 'minutes').toDate(),
             },
             {
               id: 'PTD-002',
-              customer: { name: 'Clarke Gillebert' },
-              amount: 32.54,
-              status: 'delivered',
+              customer: { name: 'Grace Oliver' },
+              amount: 320.54,
+              status: 'flagged',              
+              riskscore: 75.54,
               createdAt: dayjs().subtract(10, 'minutes').toDate(),
-            },
+            },            
             {
-              id: 'PTD-001',
-              customer: { name: 'Adam Denisov' },
-              amount: 16.76,
-              status: 'delivered',
+              id: 'PTD-002',
+              customer: { name: 'Kaba Mohammad' },
+              amount: 120.54,
+              status: 'allowed',
+              riskscore: 71,
               createdAt: dayjs().subtract(10, 'minutes').toDate(),
             },
           ]}
@@ -130,3 +153,4 @@ export default function Page(): React.JSX.Element {
     </Grid>
   );
 }
+

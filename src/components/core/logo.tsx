@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import { useColorScheme } from '@mui/material/styles';
 
 import { NoSsr } from '@/components/core/no-ssr';
-import { borderRadius } from '@mui/system';
 
 const HEIGHT = 100;
 const WIDTH = 100;
