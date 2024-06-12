@@ -27,7 +27,7 @@ export function TotalTransactions({ diff, trend, sx, value }: TotalTransactionsP
           <Stack direction="row" sx={{ alignItems: 'flex-start', justifyContent: 'space-between' }} spacing={3}>
             <Stack spacing={1}>
               <Typography color="text.secondary" variant="overline">
-                Total Transactions
+                Transactions Checked
               </Typography>
               <Typography variant="h4">{value}</Typography>
             </Stack>

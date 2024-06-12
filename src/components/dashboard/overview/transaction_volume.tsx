@@ -31,7 +31,7 @@ export function TransactionVolume({ chartSeries, sx }: TransactionVolumeProps): 
             Sync
           </Button>
         }
-        title="Transaction Volume"
+        title="Risk Detected By Month"
       />
       <CardContent>
         <Chart height={350} options={chartOptions} series={chartSeries} type="bar" width="100%" />
@@ -39,7 +39,7 @@ export function TransactionVolume({ chartSeries, sx }: TransactionVolumeProps): 
       <Divider />
       <CardActions sx={{ justifyContent: 'flex-end' }}>
         <Button color="inherit" endIcon={<ArrowRightIcon fontSize="var(--icon-fontSize-md)" />} size="small">
-          Overview
+          
         </Button>
       </CardActions>
     </Card>
@@ -73,7 +73,7 @@ function useChartOptions(): ApexOptions {
     yaxis: {
       labels: {
         formatter: (value) => (value > 0 ? `${value}K` : `${value}`),
-        offsetX: -10,
+        offsetX: -0,
         style: { colors: theme.palette.text.secondary },
       },
     },

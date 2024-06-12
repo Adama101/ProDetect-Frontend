@@ -17,7 +17,7 @@ import dayjs from 'dayjs';
 
 const statusMap = {
   flagged: { label: 'Flagged', color: 'warning' },
-  allowed: { label: 'Allowed', color: 'success' },
+  low_risk: { label: 'Low Risk', color: 'success' },
   high_risk: { label: 'High Risk', color: 'error' },
 } as const;
 
@@ -25,7 +25,7 @@ export interface allalerts {
   id: string;
   customer: { name: string };
   amount: number;
-  status: 'flagged' | 'allowed' | 'high_risk';
+  status: 'flagged' | 'low_risk' | 'high_risk';
   createdAt: Date;
   riskscore: number;
 }
