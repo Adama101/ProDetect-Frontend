@@ -7,29 +7,31 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Unstable_Grid2';
 import { Plus as PlusIcon } from '@phosphor-icons/react/dist/ssr/Plus';
 import dayjs from 'dayjs';
+import Link from 'next/link';
 
 import { config } from '@/config';
 import { IntegrationCard } from '@/components/dashboard/integrations/integrations-card';
 import type { Integration } from '@/components/dashboard/integrations/integrations-card';
-import { CompaniesFilters } from '@/components/dashboard/integrations/integrations-filters';
+import { CompaniesFilters, IntegrationsFilters } from '@/components/dashboard/integrations/integrations-filters';
 
 export const metadata = { title: `Integrations | Dashboard | ${config.site.name}` } satisfies Metadata;
 
-const integrations = [
+const integrations: Integration[] = [
   {
-    id: 'INTEG-006',
+    id: 'INTEG-002',
     title: 'Upload File',
     description: 'Upload a sample transaction file for the system to learn and adapt',
     logo: '/assets/upload_file.png',
+    href: '',  // To UPLOAD FILE of Sample Transactions
   },
   {
-    id: 'INTEG-005',
+    id: 'INTEG-001',
     title: 'API Integrations',
-    description: 'Start a system integartion using our APIs',
+    description: 'Start a system integration using our APIs',
     logo: '/assets/rest_api.png',
+    href: '/dashboard/integrations/api',  // Route to API KEYS Page
   },
-
-] satisfies Integration[];
+];
 
 export default function Page(): React.JSX.Element {
   return (
@@ -40,17 +42,20 @@ export default function Page(): React.JSX.Element {
           <Stack sx={{ alignItems: 'center' }} direction="row" spacing={1}>
           </Stack>
         </Stack>
-        <div>
-          <Button startIcon={<PlusIcon fontSize="var(--icon-fontSize-md)" />} variant="contained">
-            Add
-          </Button>
-        </div>
       </Stack>
-      <CompaniesFilters />
+      <IntegrationsFilters />
       <Grid container spacing={3}>
         {integrations.map((integration) => (
           <Grid key={integration.id} lg={4} md={6} xs={12}>
-            <IntegrationCard integration={integration} />
+
+            {/* Linking to API KEYS page or UPLOAD FILE*/}
+            {integration.href ? (
+              <Link href={integration.href} passHref>
+                <IntegrationCard integration={integration} />
+              </Link>
+            ) : (
+              <IntegrationCard integration={integration} />
+            )}
           </Grid>
         ))}
       </Grid>

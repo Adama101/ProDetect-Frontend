@@ -31,3 +31,6 @@ html {
 body {
   height: 100%;
 }
+.no-underline {
+  text-decoration: none;
+}
