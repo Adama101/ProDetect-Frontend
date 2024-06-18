@@ -1,18 +1,16 @@
 import * as React from 'react';
 import type { Metadata } from 'next';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Unstable_Grid2';
-import { Plus as PlusIcon } from '@phosphor-icons/react/dist/ssr/Plus';
-import dayjs from 'dayjs';
+
 import Link from 'next/link';
 
 import { config } from '@/config';
 import { IntegrationCard } from '@/components/dashboard/integrations/integrations-card';
 import type { Integration } from '@/components/dashboard/integrations/integrations-card';
-import { CompaniesFilters, IntegrationsFilters } from '@/components/dashboard/integrations/integrations-filters';
+import { IntegrationsFilters } from '@/components/dashboard/integrations/integrations-filters';
 
 export const metadata = { title: `Integrations | Dashboard | ${config.site.name}` } satisfies Metadata;
 
@@ -29,7 +27,7 @@ const integrations: Integration[] = [
     title: 'API Integrations',
     description: 'Start a system integration using our APIs',
     logo: '/assets/rest_api.png',
-    href: '/dashboard/integrations/api',  // Route to API KEYS Page
+    href: '/dashboard/api',  // Route to API KEYS Page
   },
 ];
 

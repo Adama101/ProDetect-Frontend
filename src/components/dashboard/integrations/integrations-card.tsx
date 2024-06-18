@@ -8,6 +8,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
 export interface Integration {
+  href: any;
   id: string;
   title: string;
   description: string;
