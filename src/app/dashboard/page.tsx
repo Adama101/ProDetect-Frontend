@@ -39,22 +39,6 @@ export default function Page(): React.JSX.Element {
         <RiskScore sx={{ height: '100%' }} value={15} />
       </Grid>
 
-      {/* Risk Detected By Month Tile */}
-      <Grid lg={8} xs={12}>
-        <TransactionVolume
-          chartSeries={[
-            { name: 'This year', data: [18, 16, 5, 8, 3, 14, 14, 16, 17, 19, 18, 25] },
-            //{ name: 'Last year', data: [12, 11, 4, 6, 2, 9, 9, 10, 11, 12, 13, 13] },
-          ]}
-          sx={{ height: '100%' }}
-        />
-      </Grid>
-
-      {/* Flagged Transactions Tile */}
-      <Grid lg={4} md={6} xs={12}>
-        <FlaggedTransactions chartSeries={[63, 15, 22]} labels={['Desktop', 'Tablet', 'Phone']} sx={{ height: '100%' }} />
-      </Grid>
-
       {/* Flagged Customers Tile */}
       <Grid lg={4} md={6} xs={12}>
         <FlaggedCustomer
@@ -73,7 +57,7 @@ export default function Page(): React.JSX.Element {
             },
             {
               id: 'PRD-003',
-              name: 'Adama JArju',
+              name: 'Adama Jarju',
               avatar: 'assets/avatar.png',
               updatedAt: dayjs().subtract(5, 'minutes').subtract(3, 'hour').toDate(),
             },
@@ -150,7 +134,24 @@ export default function Page(): React.JSX.Element {
           sx={{ height: '100%' }}
         />
       </Grid>
+      
+      {/* Risk Detected By Month Tile */}
+      <Grid lg={8} xs={12}>
+        <TransactionVolume
+          chartSeries={[
+            { name: 'This year', data: [18, 16, 5, 8, 3, 14, 14, 16, 17, 19, 18, 25] },
+            //{ name: 'Last year', data: [12, 11, 4, 6, 2, 9, 9, 10, 11, 12, 13, 13] },
+          ]}
+          sx={{ height: '100%' }}
+        />
+      </Grid>
+
+      {/* Flagged Transactions Tile */}
+      <Grid lg={4} md={6} xs={12}>
+        <FlaggedTransactions chartSeries={[63, 15, 22]} labels={['Desktop', 'Tablet', 'Phone']} sx={{ height: '100%' }} />
+      </Grid>
     </Grid>
+    
   );
 }
 

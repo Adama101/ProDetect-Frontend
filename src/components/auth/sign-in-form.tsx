@@ -3,7 +3,6 @@
 import * as React from 'react';
 import RouterLink from 'next/link';
 import { useRouter } from 'next/navigation';
-import { zodResolver } from '@hookform/resolvers/zod';
 import Alert from '@mui/material/Alert';
 import Button from '@mui/material/Button';
 import FormControl from '@mui/material/FormControl';
@@ -19,7 +18,6 @@ import { Controller, useForm } from 'react-hook-form';
 import { z as zod } from 'zod';
 import Checkbox from '@mui/material/Checkbox';
 import { paths } from '@/paths';
-import { authClient } from '@/lib/auth/client';
 import { useUser } from '@/hooks/use-user';
 import { Box, FormControlLabel } from '@mui/material';
 
@@ -50,24 +48,10 @@ export function SignInForm(): React.JSX.Element {
 
   const onSubmit = React.useCallback(
     async (values: Values): Promise<void> => {
-      setIsPending(true);
-
-      const { error } = await authClient.signInWithPassword(values);
-
-      if (error) {
-        setError('root', { type: '', message: error });
-        setIsPending(false);
-        return;
-      }
-
-      // Refresh the auth state
-      await checkSession?.();
-
-      // UserProvider, for this case, will not refresh the router
-      // After refresh, GuestGuard will handle the redirect
-      router.refresh();
+      // Navigate to the dashboard route directly with out Authentication for Now
+      router.push('/dashboard');
     },
-    [checkSession, router, setError]
+    [router]
   );
 
   return (
