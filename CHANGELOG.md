@@ -1,5 +1,12 @@
 # Changelog
 
+## v1 Ready
+
+###### June 10, 2024
+
+- All changes implemented
+- Ready for deployement
+
 ## v4.0.0
 
 ###### June 10, 2024
