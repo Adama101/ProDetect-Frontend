@@ -23,15 +23,15 @@ export function TotalCustomers({ diff, trend, sx, value }: TotalCustomersProps):
   return (
     <Card sx={sx}>
       <CardContent>
-        <Stack spacing={3}>
-          <Stack direction="row" sx={{ alignItems: 'flex-start', justifyContent: 'space-between' }} spacing={3}>
+        <Stack spacing={0}>
+          <Stack direction="row" sx={{ alignItems: 'normal', justifyContent: 'centre' }} spacing={1}>
             <Stack spacing={1}>
               <Typography color="text.secondary" variant="overline">
-                Customers Checked
+                Total Customers Checked
               </Typography>
               <Typography variant="h4">{value}</Typography>
             </Stack>
-            <Avatar sx={{ backgroundColor: 'var(--mui-palette-success-main)', height: '56px', width: '56px' }}>
+            <Avatar sx={{ backgroundColor: 'var(--mui-palette-success-main)', height: '35px', width: '35px' }}>
               <UsersIcon fontSize="var(--icon-fontSize-lg)" />
             </Avatar>
           </Stack>

@@ -8,7 +8,6 @@ export function IntegrationsFilters(): React.JSX.Element {
   return (
     <Card sx={{ p: 2 }}>
       <OutlinedInput
-        defaultValue=""
         fullWidth
         placeholder="Search integration"
         startAdornment={

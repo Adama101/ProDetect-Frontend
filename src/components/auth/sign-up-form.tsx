@@ -52,19 +52,18 @@ const defaultValues = {
 export function SignUpForm(): React.JSX.Element {
   const router = useRouter();
 
-  const { checkSession } = useUser();
+  useUser();
 
-  const [isPending, setIsPending] = React.useState<boolean>(false);
+  const [isPending] = React.useState<boolean>(false);
 
   const {
     control,
     handleSubmit,
-    setError,
     formState: { errors },
   } = useForm<Values>({ defaultValues, resolver: zodResolver(schema) });
 
   const onSubmit = React.useCallback(
-    async (values: Values): Promise<void> => {
+    async (): Promise<void> => {
       // Navigate to the dashboard route directly
       router.push('/dashboard/integrations');
     },

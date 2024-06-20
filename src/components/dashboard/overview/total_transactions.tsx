@@ -23,15 +23,15 @@ export function TotalTransactions({ diff, trend, sx, value }: TotalTransactionsP
   return (
     <Card sx={sx}>
       <CardContent>
-        <Stack spacing={2}>
-          <Stack direction="row" sx={{ alignItems: 'flex-start', justifyContent: 'space-between' }} spacing={3}>
+        <Stack spacing={0}>
+          <Stack direction="row" sx={{ alignItems: 'normal', justifyContent: 'centre' }} spacing={3}>
             <Stack spacing={1}>
               <Typography color="text.secondary" variant="overline">
-                Transactions Checked
+                Transactions Amount Checked
               </Typography>
               <Typography variant="h4">{value}</Typography>
             </Stack>
-            <Avatar sx={{ backgroundColor: 'var(--mui-palette-primary-main)', height: '56px', width: '56px' }}>
+            <Avatar sx={{ backgroundColor: 'var(--mui-palette-primary-main)', height: '35px', width: '35px' }}>
               <CurrencyDollarIcon fontSize="var(--icon-fontSize-lg)" />
             </Avatar>
           </Stack>

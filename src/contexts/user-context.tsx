@@ -1,10 +1,16 @@
 'use client';
 
 import * as React from 'react';
-
 import type { User } from '@/types/user';
-import { authClient } from '@/lib/auth/client';
 import { logger } from '@/lib/default-logger';
+
+// Define or import the getUser function
+async function getUser() {
+  // Replace this with the actual implementation of your getUser function
+  // It should return an object with `data` and `error` properties
+  // For example:
+  return { data: null, error: null };
+}
 
 export interface UserContextValue {
   user: User | null;
@@ -28,7 +34,7 @@ export function UserProvider({ children }: UserProviderProps): React.JSX.Element
 
   const checkSession = React.useCallback(async (): Promise<void> => {
     try {
-      const { data, error } = await authClient.getUser();
+      const { data, error } = await getUser();
 
       if (error) {
         logger.error(error);

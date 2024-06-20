@@ -7,8 +7,8 @@ import { config } from '@/config';
 import { TotalCustomers } from '@/components/dashboard/overview/total_customers';
 import { Alerts } from '@/components/dashboard/overview/alerts';
 import { RiskScore } from '@/components/dashboard/overview/risk_score';
-import { TransactionVolume } from '@/components/dashboard/overview/transaction_volume';
-import { FlaggedTransactions } from '@/components/dashboard/overview/flagged_transactions';
+//import { TransactionVolume } from '@/components/dashboard/overview/transaction_volume';
+//import { FlaggedTransactions } from '@/components/dashboard/overview/flagged_transactions';
 import { LatestAlerts } from '@/components/dashboard/overview/all_alerts';
 import { FlaggedCustomer } from '@/components/dashboard/overview/flagged_customers';
 import { TotalTransactions } from '@/components/dashboard/overview/total_transactions';
@@ -43,6 +43,12 @@ export default function Page(): React.JSX.Element {
       <Grid lg={4} md={6} xs={12}>
         <FlaggedCustomer
           products={[
+            {
+              id: 'PRD-005',
+              name: 'Edward Snowden',
+              avatar: 'assets/avatar.png',
+              updatedAt: dayjs().subtract(18, 'minutes').subtract(5, 'hour').toDate(),
+            },
             {
               id: 'PRD-005',
               name: 'Samson Were',
@@ -85,23 +91,23 @@ export default function Page(): React.JSX.Element {
             {
               id: 'PTD-007',
               customer: { name: 'Lucky Dogbey' },
-              amount: 10.50,
-              status: 'low_risk',
-              riskscore: 7,
+              amount: 15000.50,
+              status: 'high_risk',
+              riskscore: 78,
               createdAt: dayjs().subtract(10, 'minutes').toDate(),
             },
             {
               id: 'PTD-006',
               customer: { name: 'Emmanuel Terwase' },
-              amount: 250.1,
-              status: 'low_risk',
+              amount: 2500.11,
+              status: 'flagged',
               riskscore: 75,
               createdAt: dayjs().subtract(10, 'minutes').toDate(),
             },
             {
               id: 'PTD-004',
               customer: { name: 'Jude Belligham' },
-              amount: 1000.99,
+              amount: 41000.99,
               status: 'high_risk',
               riskscore: 90,
               createdAt: dayjs().subtract(10, 'minutes').toDate(),
@@ -109,15 +115,15 @@ export default function Page(): React.JSX.Element {
             {
               id: 'PTD-003',
               customer: { name: 'Bright Init' },
-              amount: 906.43,
-              status: 'low_risk',              
+              amount: 1906.43,
+              status: 'flagged',              
               riskscore: 63,
               createdAt: dayjs().subtract(10, 'minutes').toDate(),
             },
             {
               id: 'PTD-002',
               customer: { name: 'Grace Oliver' },
-              amount: 320.54,
+              amount: 5320.54,
               status: 'flagged',              
               riskscore: 75.54,
               createdAt: dayjs().subtract(10, 'minutes').toDate(),
@@ -125,30 +131,14 @@ export default function Page(): React.JSX.Element {
             {
               id: 'PTD-002',
               customer: { name: 'Kaba Mohammad' },
-              amount: 120.54,
-              status: 'low_risk',
+              amount: 1920.54,
+              status: 'flagged',
               riskscore: 71,
               createdAt: dayjs().subtract(10, 'minutes').toDate(),
             },
           ]}
           sx={{ height: '100%' }}
         />
-      </Grid>
-      
-      {/* Risk Detected By Month Tile */}
-      <Grid lg={8} xs={12}>
-        <TransactionVolume
-          chartSeries={[
-            { name: 'This year', data: [18, 16, 5, 8, 3, 14, 14, 16, 17, 19, 18, 25] },
-            //{ name: 'Last year', data: [12, 11, 4, 6, 2, 9, 9, 10, 11, 12, 13, 13] },
-          ]}
-          sx={{ height: '100%' }}
-        />
-      </Grid>
-
-      {/* Flagged Transactions Tile */}
-      <Grid lg={4} md={6} xs={12}>
-        <FlaggedTransactions chartSeries={[63, 15, 22]} labels={['Desktop', 'Tablet', 'Phone']} sx={{ height: '100%' }} />
       </Grid>
     </Grid>
     

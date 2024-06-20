@@ -23,7 +23,7 @@ export function RiskScore({ value, sx }: RiskScoreProps): React.JSX.Element {
             </Typography>
             <Typography variant="h4">{value}</Typography>
           </Stack>
-          <Avatar sx={{ backgroundColor: 'var(--mui-palette-primary-main)', height: '56px', width: '56px' }}>
+          <Avatar sx={{ backgroundColor: 'var(--mui-palette-primary-main)', height: '35px', width: '35px' }}>
             <ReceiptIcon fontSize="var(--icon-fontSize-lg)" />
           </Avatar>
         </Stack>
