@@ -4,9 +4,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Unstable_Grid2';
-
 import Link from 'next/link';
-
 import { config } from '@/config';
 import { IntegrationCard } from '@/components/dashboard/integrations/integrations-card';
 import type { Integration } from '@/components/dashboard/integrations/integrations-card';
@@ -27,7 +25,7 @@ const integrations: Integration[] = [
     title: 'API Integrations',
     description: 'Start a system integration using our APIs',
     logo: '/assets/rest_api.png',
-    href: '/dashboard/api',  // Route to API KEYS Page
+    href: '/dashboard/integrations/api',  // Route to API KEYS Page
   },
 ];
 
@@ -45,11 +43,11 @@ export default function Page(): React.JSX.Element {
       <Grid container spacing={3}>
         {integrations.map((integration) => (
           <Grid key={integration.id} lg={4} md={6} xs={12}>
-
-            {/* Linking to API KEYS page or UPLOAD FILE*/}
             {integration.href ? (
-              <Link href={integration.href} passHref>
-                <IntegrationCard integration={integration} />
+              <Link href={integration.href} passHref style={{ textDecoration: 'none' }}>
+                <Box component="a" sx={{ textDecoration: 'none' }}>
+                  <IntegrationCard integration={integration} />
+                </Box>
               </Link>
             ) : (
               <IntegrationCard integration={integration} />

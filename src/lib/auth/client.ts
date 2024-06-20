@@ -9,11 +9,11 @@ function generateToken(): string {
 }
 
 const user = {
-  id: 'USR-000',
-  avatar: '/assets/avatar.png',
-  firstName: 'Adama',
-  lastName: 'Jarju',
-  email: 'adama.jarju@meltwater.org',
+  id: '',
+  avatar: '',
+  firstName: '',
+  lastName: '',
+  email: '',
 } satisfies User;
 
 export interface SignUpParams {
@@ -57,9 +57,9 @@ class AuthClient {
     // Make API request
 
     // Auth Credentials
-    if (email !== 'adama.jarju@meltwater.org' || password !== '123') {
-      return { error: 'Invalid credentials' };
-    }
+    // if (email !== '' || password !== '') {
+    //   return { error: 'Invalid credentials' };
+    // }
 
     const token = generateToken();
     localStorage.setItem('custom-auth-token', token);
@@ -78,7 +78,7 @@ class AuthClient {
   async getUser(): Promise<{ data?: User | null; error?: string }> {
     // Make API request
 
-    // We do not handle the API, so just check if we have a token in localStorage.
+    // just check if we have a token in localStorage.
     const token = localStorage.getItem('custom-auth-token');
 
     if (!token) {
@@ -95,4 +95,3 @@ class AuthClient {
   }
 }
 
-export const authClient = new AuthClient();

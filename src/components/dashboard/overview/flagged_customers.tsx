@@ -30,7 +30,7 @@ export interface FlaggedCustomerProps {
 export function FlaggedCustomer ({ products = [], sx }: FlaggedCustomerProps): React.JSX.Element {
     return (
         <Card sx={sx}>
-            <CardHeader title="All Flagged Customers" />
+            <CardHeader title="High Risk Customers" />
             <Divider />
             <List>
                 {products.map((product, index) => (

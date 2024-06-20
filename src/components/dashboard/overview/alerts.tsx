@@ -17,21 +17,18 @@ export function Alerts({ value, sx }: AlertsProps): React.JSX.Element {
   return (
     <Card sx={sx}>
       <CardContent>
-        <Stack spacing={2}>
-          <Stack direction="row" sx={{ alignItems: 'flex-start', justifyContent: 'space-between' }} spacing={3}>
+        <Stack spacing={0}>
+          <Stack direction="row" sx={{ alignItems: 'flex-start', justifyContent: 'space-between' }} spacing={1}>
             <Stack spacing={1}>
               <Typography color="text.secondary" gutterBottom variant="overline">
-                Alerts
+                Flagged Transactions
               </Typography>
               <Typography variant="h4">{value}</Typography>
             </Stack>
-            <Avatar sx={{ backgroundColor: 'var(--mui-palette-warning-main)', height: '56px', width: '56px' }}>
+            <Avatar sx={{ backgroundColor: 'var(--mui-palette-warning-main)', height: '35px', width: '35px' }}>
               <WarningIcon fontSize="var(--icon-fontSize-lg)" />
             </Avatar>
           </Stack>
-          <div>
-            <LinearProgress value={value} variant="determinate" />
-          </div>
         </Stack>
       </CardContent>
     </Card>

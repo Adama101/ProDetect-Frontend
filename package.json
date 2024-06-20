@@ -24,6 +24,7 @@
     "@fontsource/plus-jakarta-sans": "5.0.19",
     "@fontsource/roboto-mono": "5.0.17",
     "@hookform/resolvers": "3.3.4",
+    "@mui/icons-material": "^5.15.20",
     "@mui/lab": "5.0.0-alpha.167",
     "@mui/material": "5.15.12",
     "@mui/system": "5.15.12",
@@ -37,6 +38,7 @@
     "react-apexcharts": "1.4.1",
     "react-dom": "18.2.0",
     "react-hook-form": "7.51.0",
+    "uuid": "^10.0.0",
     "zod": "3.22.4"
   },
   "devDependencies": {
@@ -49,6 +51,7 @@
     "@types/react": "18.2.64",
     "@types/react-dom": "18.2.21",
     "@types/react-syntax-highlighter": "15.5.11",
+    "@types/uuid": "^9.0.8",
     "@vercel/style-guide": "6.0.0",
     "eslint": "8.57.0",
     "eslint-config-next": "14.1.3",
