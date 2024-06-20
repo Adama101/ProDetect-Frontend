@@ -4,39 +4,39 @@ import Grid from '@mui/material/Unstable_Grid2';
 import dayjs from 'dayjs';
 
 import { config } from '@/config';
-import { TotalCustomers } from '@/components/dashboard/overview/total_customers';
+import { FalsePositives } from '@/components/dashboard/overview/false_positives';
 import { Alerts } from '@/components/dashboard/overview/alerts';
-import { RiskScore } from '@/components/dashboard/overview/risk_score';
+import { AverageDetectionTime } from '@/components/dashboard/overview/average_detection_time';
 //import { TransactionVolume } from '@/components/dashboard/overview/transaction_volume';
 //import { FlaggedTransactions } from '@/components/dashboard/overview/flagged_transactions';
 import { LatestAlerts } from '@/components/dashboard/overview/all_alerts';
 import { FlaggedCustomer } from '@/components/dashboard/overview/flagged_customers';
-import { TotalTransactions } from '@/components/dashboard/overview/total_transactions';
+import { ConfirmedFraudCases } from '@/components/dashboard/overview/confirmed_fraud_cases';
 
 export const metadata = { title: `Overview | Dashboard | ${config.site.name}` } satisfies Metadata;
 
 export default function Page(): React.JSX.Element {
   return (
     <Grid container spacing={3}>
-      <Grid lg={3} sm={6} xs={12}>
-
-        {/* Total Transaction Tile */}
-        <TotalTransactions diff={12} trend="up" sx={{ height: '100%' }} value="$24K" />
-      </Grid>
-      <Grid lg={3} sm={6} xs={12}>
-
-        {/* Total Customer Tile */}
-        <TotalCustomers diff={16} trend="down" sx={{ height: '100%' }} value="178" />
-      </Grid>
-      <Grid lg={3} sm={6} xs={12}>
+      <Grid lg={3} sm={6} xs={12}>        
 
         {/* Alerts Tile */}
         <Alerts sx={{ height: '100%' }} value={75} />
       </Grid>
       <Grid lg={3} sm={6} xs={12}>
 
-        {/* Risk Score Tile */}
-        <RiskScore sx={{ height: '100%' }} value={15} />
+        {/* Confirmed Fraud Cases Tile */}
+        <ConfirmedFraudCases diff={12} trend="up" sx={{ height: '100%' }} value="249" />
+      </Grid>
+      <Grid lg={3} sm={6} xs={12}>
+
+        {/* FalsePositive Tile */}
+        <FalsePositives diff={16} trend="down" sx={{ height: '100%' }} value="11" />
+      </Grid>
+      <Grid lg={3} sm={6} xs={12}>
+
+        {/* Average Detection Time Tile */}
+        <AverageDetectionTime sx={{ height: '100%' }} value="0.3 " trend={'up'}/>
       </Grid>
 
       {/* Flagged Customers Tile */}

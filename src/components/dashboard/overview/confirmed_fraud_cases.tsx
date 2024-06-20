@@ -7,16 +7,16 @@ import type { SxProps } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import { ArrowDown as ArrowDownIcon } from '@phosphor-icons/react/dist/ssr/ArrowDown';
 import { ArrowUp as ArrowUpIcon } from '@phosphor-icons/react/dist/ssr/ArrowUp';
-import { Users as UsersIcon } from '@phosphor-icons/react/dist/ssr/Users';
+import { CurrencyDollar as CurrencyDollarIcon } from '@phosphor-icons/react/dist/ssr/CurrencyDollar';
 
-export interface TotalCustomersProps {
+export interface ConfirmedFraudCasesProps {
   diff?: number;
   trend: 'up' | 'down';
   sx?: SxProps;
   value: string;
 }
 
-export function TotalCustomers({ diff, trend, sx, value }: TotalCustomersProps): React.JSX.Element {
+export function ConfirmedFraudCases({ diff, trend, sx, value }: ConfirmedFraudCasesProps): React.JSX.Element {
   const TrendIcon = trend === 'up' ? ArrowUpIcon : ArrowDownIcon;
   const trendColor = trend === 'up' ? 'var(--mui-palette-success-main)' : 'var(--mui-palette-error-main)';
 
@@ -24,15 +24,15 @@ export function TotalCustomers({ diff, trend, sx, value }: TotalCustomersProps):
     <Card sx={sx}>
       <CardContent>
         <Stack spacing={0}>
-          <Stack direction="row" sx={{ alignItems: 'normal', justifyContent: 'centre' }} spacing={1}>
+          <Stack direction="row" sx={{ alignItems: 'normal', justifyContent: 'centre' }} spacing={3}>
             <Stack spacing={1}>
               <Typography color="text.secondary" variant="overline">
-                Total Customers Checked
+                Confirmed Fraud Cases
               </Typography>
               <Typography variant="h4">{value}</Typography>
             </Stack>
-            <Avatar sx={{ backgroundColor: 'var(--mui-palette-success-main)', height: '35px', width: '35px' }}>
-              <UsersIcon fontSize="var(--icon-fontSize-lg)" />
+            <Avatar sx={{ backgroundColor: 'var(--mui-palette-primary-main)', height: '35px', width: '35px' }}>
+              <CurrencyDollarIcon fontSize="var(--icon-fontSize-lg)" />
             </Avatar>
           </Stack>
           {diff ? (
