@@ -7,8 +7,6 @@ import { config } from '@/config';
 import { FalsePositives } from '@/components/dashboard/overview/false_positives';
 import { Alerts } from '@/components/dashboard/overview/alerts';
 import { AverageDetectionTime } from '@/components/dashboard/overview/average_detection_time';
-//import { TransactionVolume } from '@/components/dashboard/overview/transaction_volume';
-//import { FlaggedTransactions } from '@/components/dashboard/overview/flagged_transactions';
 import { LatestAlerts } from '@/components/dashboard/overview/all_alerts';
 import { FlaggedCustomer } from '@/components/dashboard/overview/flagged_customers';
 import { ConfirmedFraudCases } from '@/components/dashboard/overview/confirmed_fraud_cases';
@@ -30,7 +28,7 @@ export default function Page(): React.JSX.Element {
       </Grid>
       <Grid lg={3} sm={6} xs={12}>
 
-        {/* FalsePositive Tile */}
+        {/* False Positive Tile */}
         <FalsePositives diff={16} trend="down" sx={{ height: '100%' }} value="11" />
       </Grid>
       <Grid lg={3} sm={6} xs={12}>
