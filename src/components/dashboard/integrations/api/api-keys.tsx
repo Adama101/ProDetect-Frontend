@@ -2,8 +2,8 @@
 
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { Box, Button, FormControlLabel, IconButton, InputAdornment, Stack, Switch, TextField, Typography } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import { Box, Button, FormControlLabel, IconButton, InputAdornment, Stack, Switch, TextField } from '@mui/material';
 import { v4 as uuidv4 } from 'uuid';
 
 const generateKey = () => {
@@ -41,7 +41,7 @@ const APIKeys = () => {
     }, [isLive]);
 
     return (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: 3, position: 'relative' }}>
             <FormControlLabel
                 control={<Switch checked={isLive} onChange={toggleMode} />}
                 label={isLive ? 'Live Mode' : 'Test Mode'}
@@ -90,6 +90,17 @@ const APIKeys = () => {
                     </Button>
                 </Box> */}
             </Stack>
+            <Button
+                variant="contained"
+                href="/dashboard/integrations/api/documentation"
+                sx={{
+                    position: 'absolute',
+                    top: 16,
+                    right: 16,
+                }}
+            >
+                Documentation
+            </Button>
         </Box>
     );
 };
