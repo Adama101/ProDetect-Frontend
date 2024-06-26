@@ -43,7 +43,7 @@ export function FlaggedTransactions({ chartSeries, labels, sx }: FlaggedTransact
                   {Icon ? <Icon fontSize="var(--icon-fontSize-lg)" /> : null}
                   <Typography variant="h6">{label}</Typography>
                   <Typography color="text.secondary" variant="subtitle2">
-                    {item}%
+                    {item}
                   </Typography>
                 </Stack>
               );
