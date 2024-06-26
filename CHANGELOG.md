@@ -1,6 +1,11 @@
-# Changelog
+###### Changelog ########
 
 ## v1 Ready
+
+###### June 20, 2024
+
+- Added API Documentation
+- Deployement in progress
 
 ###### June 10, 2024
 

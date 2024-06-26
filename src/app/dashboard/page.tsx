@@ -19,17 +19,17 @@ export default function Page(): React.JSX.Element {
       <Grid lg={3} sm={6} xs={12}>        
 
         {/* Alerts Tile */}
-        <Alerts sx={{ height: '100%' }} value={75} />
+        <Alerts sx={{ height: '100%' }} value={149} />
       </Grid>
       <Grid lg={3} sm={6} xs={12}>
 
         {/* Confirmed Fraud Cases Tile */}
-        <ConfirmedFraudCases diff={12} trend="up" sx={{ height: '100%' }} value="249" />
+        <ConfirmedFraudCases diff={12} trend="up" sx={{ height: '100%' }} value="41" />
       </Grid>
       <Grid lg={3} sm={6} xs={12}>
 
         {/* False Positive Tile */}
-        <FalsePositives diff={16} trend="down" sx={{ height: '100%' }} value="11" />
+        <FalsePositives diff={16} trend="down" sx={{ height: '100%' }} value="108" />
       </Grid>
       <Grid lg={3} sm={6} xs={12}>
 

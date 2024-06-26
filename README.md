@@ -1,11 +1,12 @@
 <<<<<<< HEAD
 # ProDetect-Frontend
-This is a fraud detection and prevention system for banks and FinTechs on Africa
+This is a fraud detection and prevention system for banks and FinTechs in Africa
 =======
 ## ProDetect
 -Is a transaction monitoring tool that reduces false flagging by 60% and detects evolving fraud patterns, enabling banks and FinTechs to reduce operational costs and achieve regulatory compliance.
 
 ## Team Member
+- Adama Jarju
 - Emmanuel Terwase
 - Jude Ukana
 
